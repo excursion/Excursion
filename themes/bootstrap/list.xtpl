@@ -1,0 +1,44 @@
+<!-- BEGIN: MAIN -->
+<div class="interiorContainer clearfix">
+    
+	<div class="interiorContent">
+
+		<div id="content" class="col965 gutter generic">
+
+			<h2>{TITLE}</h2>
+			<!-- IF {PHP.user.auth_write} --><div style="float:right;margin-top:-10px;padding-left:100px;"><a href="page.php?m=add&amp;c={PHP.c}" class="btn-standard">{PHP.lang.submitpage}</a></div><!-- ENDIF -->
+			<h3>{DESC}</h3>
+						
+			<!-- BEGIN: LIST -->
+			<div class="articlePost resultsListing clearfix">
+
+				<div class="col965">
+					
+					<h3><a href="page.php?id={ID}">{TITLE}</a></h3>
+					<h5>{DATE} by <strong>{OWNER}</strong></h5>
+					<p>{TEXT_CUT}</p>
+				
+				</div>
+
+			</div>
+			<!-- END: LIST -->
+			<!-- IF {PHP.total_pages} == 0 -->
+			<div class="articlePost resultsListing clearfix">
+			
+				<div class="col965">
+				
+					<p>This category is empty</p>
+					
+				</div>
+				
+			</div>
+			<!-- ENDIF -->
+
+			{PAGINATION}
+
+		</div> 
+
+	</div>
+	
+</div>
+<!-- END: MAIN -->

@@ -1,0 +1,63 @@
+<!-- BEGIN: MAIN -->
+<div class="interiorContainer clearfix">
+    
+	<div class="interiorContent">
+
+		<div id="content" class="col965 gutter generic">
+
+			<h2>{PHP.lang.search}</h2>
+						
+			<h3>{PHP.lang.search_text}: {PHP.query}</h3>
+			
+			<!-- BEGIN: MESSAGE -->
+			<div class="message">
+				<ul>
+					<!-- BEGIN: ROW -->
+					<li>{ROW_MSG}</li>
+					<!-- END: ROW -->
+				</ul>
+			</div>
+			<!-- END: MESSAGE -->
+		
+			<!-- BEGIN: RESULTS -->	
+			<div class="search-page resultsListing">
+			
+				<!-- BEGIN: PAGES -->
+				<h4 class="search-title">Search results for pages</h4>
+				
+				<!-- BEGIN: ROW_PAGES -->
+				<h5><a href="page.php?id={ID}">{TITLE}</a></h5>
+				<p>{TEXT_CUT}</p>
+				<!-- END: ROW_PAGES -->
+				
+				<!-- IF {PAGE_COUNT} == '0' -->
+				<p>{PHP.lang.search_empty}</p>
+				<!-- ENDIF -->
+				
+				<!-- END: PAGES -->
+			
+				<!-- BEGIN: FORUMS -->
+				<h4 class="search-title">Search results for forums</h4>
+			
+				<!-- BEGIN: ROW_FORUMS -->					
+				<h5><a href="{URL}">{TITLE}</a></h5>
+				<p>{TEXT_CUT}</p>
+				<!-- END: ROW_FORUMS -->
+				
+				<!-- IF {FORUM_COUNT} == '0' -->
+				<p>{PHP.lang.search_empty}</p>
+				<!-- ENDIF -->
+				
+				<!-- END: FORUMS -->
+				
+			</div>
+			<!-- END: RESULTS -->
+
+			{PAGINATION}
+				
+		</div> 
+
+	</div>
+	
+</div>
+<!-- END: MAIN -->

@@ -1,0 +1,75 @@
+<!-- BEGIN: MAIN -->
+<div class="interiorContainer clearfix">
+
+	<div class="interiorContent">
+
+		<div class="categoryBar">
+			<h4 class="category"><a href="forums.php">Forums</a></h4>
+		</div>
+
+		<div id="content" class="col965 forumpage">
+
+			<div id="addon-supported">Developer <br />Support</div>
+
+			<h2>Community Forums</h2>
+
+			<p>Interact with other members of the forum community.</p>
+
+			<br />
+			
+			<div id="forum-wrap">
+				
+				<!-- BEGIN: CAT -->
+				<h2><span>{CAT_TITLE}</span></h2>
+				<table class="basic" cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+					<tr>
+						<th class="topic" colspan="2" style="width:68%;">Title</th>
+						<th style="width:20%;">Latest Post Info</th>
+						<th align="center" style="width:6%;">Replies</th>
+						<th align="center" style="width:6%;">Views</th>
+					</tr>
+					<!-- BEGIN: SECTION -->
+					<tr>
+						<td class="cell-marker">
+							<a href=""><img src="assets/images/forums/marker_new_topic.gif" width="22" height="18" border="0" alt="" title="" /></a>
+						</td>
+						<td style="width:528px;">
+							<div class="topicTitle">
+								<a href="forums.php?m=topics&section={SECTION_CODE}">{SECTION_TITLE}</a>
+							</div>
+							<div class="forumLightLinks">{SECTION_DESC}</div>
+						</td>
+						<td class="cell-info" style="width:225px;vertical-align:middle">
+							<!-- BEGIN: LAST_POST -->
+							<a href="forums.php?m=post&section={SECTION}&id={TOPIC_ID}#post-{POST_ID}">{TITLE}</a>
+							<br />by {AUTHOR}
+							<!-- END: LAST_POST -->
+							<!-- BEGIN: NO_LAST_POST -->
+							no posts
+							<!-- END: NO_LAST_POST -->
+						</td>
+						<td class="cell-numeric" style="width:70px;" align="center">{SECTION_POST_COUNT}</td>
+						<td class="cell-numeric" style="width:70px;" align="center">{SECTION_VIEW_COUNT}</td>
+					</tr>
+					<!-- END: SECTION -->
+					<!-- BEGIN: EMPTY -->
+					<tr>
+						<td colspan="4" class="centerall">This section is empty</td>
+					</tr>
+					<!-- END: EMPTY -->
+					<tr>
+						<td class="tableRowHeadingBold" colspan="5">
+							&nbsp;
+						</td>
+					</tr>
+				</table>
+				<!-- END: CAT -->
+				
+			</div> 
+
+		</div> 
+
+	</div>
+	
+</div> 
+<!-- END: MAIN -->

@@ -1,0 +1,220 @@
+<!-- BEGIN: MAIN -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<title>Excursion - Web Installer</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="install/tpl/css/bootstrap.css" rel="stylesheet">
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+
+	<div class="container">
+
+		<div class="hero-unit">
+
+			<h1>Excursion</h1>
+
+			<p>{PHP.lang.install_well_desc}</p>
+
+		</div>
+		
+		<!-- BEGIN: MESSAGE -->
+		<div class="warning">
+			<ul>
+				<!-- BEGIN: ROW -->
+				<li>{ROW_MSG}</li>
+				<!-- END: ROW -->
+			</ul>
+		</div>
+		<!-- END: MESSAGE -->
+		
+		<!-- BEGIN: STEP1 -->
+		<form action="install.php?action=send" method="post">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th colspan="2" class="title">{PHP.lang.install_serverinfo}</th>
+				</tr>
+			</thead>
+			<tr>
+				<th><span class="php">{PHP.lang.install_php}</span></th>
+				<td class="align-right">{INSTALL_PHP_VER}</td>
+			</tr>
+			<tr>
+				<th><span class="mbstring">{PHP.lang.install_mbstring}</span></th>
+				<td class="align-right">{INSTALL_MBSTRING}</td>
+			</tr>
+			<tr>
+				<th><span class="mbstring">{PHP.lang.install_hash}</span></th>
+				<td class="align-right">{INSTALL_HASH}</td>
+			</tr>
+			<tr>
+				<th><span class="mysql">{PHP.lang.install_mysql}</span></th>
+				<td class="align-right">{INSTALL_MYSQL}</td>
+			</tr>
+			<thead>
+				<tr>
+					<th colspan="2" class="title">{PHP.lang.install_permission}</th>
+				</tr>
+			</thead>
+			<tr>
+				<th><span class="folder">assets/avatars/</span></th>
+				<td class="align-right">{INSTALL_AV_DIR}</td>
+			</tr>
+			<tr>
+				<th><span class="file">install/install.sql</span></th>
+				<td class="align-right">{INSTALL_SQL_FILE}</td>
+			</tr>
+			<tr>
+				<th><span class="file">config.php</span></th>
+				<td class="align-right">{INSTALL_CONFIG}</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<p class="help-block">{PHP.lang.install_step1_desc}</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><button type="submit" name="submit">{PHP.lang.install_continue}</button></td>
+			</tr>
+		</table>
+		<!-- END: STEP1 -->
+		
+		<!-- BEGIN: STEP2 -->
+		<form action="install.php?action=send" method="post">
+			<table class="table">
+				<tr>
+					<th>{PHP.lang.install_dbhost}</th>
+					<td><input type="text" name="db_host" value="{INSTALL_DB_HOST}" size="32" /></td>
+				</tr>
+				<tr>
+					<th>{PHP.lang.install_dbport}</th>
+					<td><input type="text" name="db_port" value="{INSTALL_DB_PORT}" size="32" /><br />
+					<span class="help">{PHP.lang.install_dbport_desc}</span></td>
+				</tr>
+				<tr>
+					<th>{PHP.lang.install_dbuser}</th>
+					<td><input type="text" name="db_user" value="{INSTALL_DB_USER}" size="32" /></td>
+				</tr>
+				<tr>
+					<th>{PHP.lang.install_dbpass}</th>
+					<td><input type="password" name="db_pass" size="32" /></td>
+				</tr>
+				<tr>
+					<th>{PHP.lang.install_dbname}</th>
+					<td><input type="text" name="db_name" value="{INSTALL_DB_NAME}" size="32" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><span class="help-block">{PHP.lang.install_step2_desc}</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><button type="submit" name="submit">{PHP.lang.install_continue}</button></td>
+				</tr>
+			</table>
+		</form>
+		<!-- END: STEP2 -->
+		
+		<!-- BEGIN: STEP3 -->
+		<form action="install.php?action=send" method="post">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th style="width:32px;">&nbsp;</th>
+						<th><span class="plugin">{PHP.lang.install_plugins}</span></th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- BEGIN: ROW -->
+					<tr>
+						<td class="centerall"><input type="checkbox" name="install_plugins[{CODE}]" {CHECKED} /></td>
+						<td>{NAME}<br /><small>{DESC}</small></td>
+					</tr>
+					<!-- END: ROW -->
+					<tr>
+						<td colspan="2"><button type="submit" name="submit">{PHP.lang.install_continue}</button></td>
+					</tr>
+				<tbody>
+			</table>
+		</form>
+		<!-- END: STEP3 -->
+		
+		<!-- BEGIN: STEP4 -->
+		<form action="install.php?action=send" method="post">
+			<table class="table">
+				<thead>
+					<tr>
+						<th colspan="2" class="title">{PHP.lang.install_createadmin}</th>
+					</tr>
+				</thead>
+				<tr>
+					<th>{PHP.lang.install_username}</th>
+					<td>{FORM_USERNAME}</td>
+				</tr>
+				<tr>
+					<th>{PHP.lang.install_pw}</th>
+					<td>{FORM_PASSWORD}</td>
+				</tr>
+				<tr>
+					<th>{PHP.lang.install_pwrep}</th>
+					<td>{FORM_REPEAT_PASSWORD}</td>
+				</tr>
+				<tr>
+					<th>{PHP.lang.install_email}</th>
+					<td>{FORM_EMAIL}</td>
+				</tr>
+				<tr>
+					<th>{PHP.lang.install_sq}</th>
+					<td>{QUESTIONS}</td>
+				</tr>
+				<tr>
+					<th>{PHP.lang.install_sa}</th>
+					<td>{FORM_SQ_ANSWER}</td>
+				</tr>
+				<tr>
+					<td colspan="2"><button type="submit" name="submit">{PHP.lang.install_continue}</button></td>
+				</tr>
+			</table>
+		</form>
+		<!-- END: STEP4 -->
+		
+		<!-- BEGIN: STEP5 -->
+		<h3>{PHP.lang.install_complete}</h3>
+		<p>{PHP.lang.install_comptext}</p>
+		<br />
+		<a href="login.php">{PHP.lang.install_log}</a>
+		<!-- END: STEP5 -->
+
+		<hr>
+
+		<footer>
+		
+			<p>Copyright &copy; Excursion 2012</p>
+			
+		</footer>
+
+	</div>
+
+<script src="install/tpl/js/jquery.js"></script>
+<script src="install/tpl/js/bootstrap-transition.js"></script>
+<script src="install/tpl/js/bootstrap-alert.js"></script>
+<script src="install/tpl/js/bootstrap-modal.js"></script>
+<script src="install/tpl/js/bootstrap-dropdown.js"></script>
+<script src="install/tpl/js/bootstrap-scrollspy.js"></script>
+<script src="install/tpl/js/bootstrap-tab.js"></script>
+<script src="install/tpl/js/bootstrap-tooltip.js"></script>
+<script src="install/tpl/js/bootstrap-popover.js"></script>
+<script src="install/tpl/js/bootstrap-button.js"></script>
+<script src="install/tpl/js/bootstrap-collapse.js"></script>
+<script src="install/tpl/js/bootstrap-carousel.js"></script>
+<script src="install/tpl/js/bootstrap-typeahead.js"></script>
+
+</body>
+</html>
+<!-- END: MAIN -->

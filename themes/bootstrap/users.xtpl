@@ -1,0 +1,44 @@
+<!-- BEGIN: MAIN -->
+<div class="interiorContainer clearfix">
+
+	<div class="interiorContent">
+
+		<div id="content" class="col965 generic">
+
+			<h2>{PHP.lang.users}</h2>
+
+			<table width="100%" class="addon-download">
+				<thead>
+					<tr>
+						<th>Username</th>
+						<th>Group</th>
+						<th>Registered</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- BEGIN: USERS_LIST -->
+					<tr class="mainrows">
+						<td>
+							<a href="users.php?id={ID}">{USERNAME}</a>
+						</td>
+						<td>
+							{GROUP}
+						</td>
+						<td>
+							{REGDATE}
+						</td>
+					</tr>
+					<!-- END: USERS_LIST -->
+				</tbody>
+			</table>
+			
+			<!-- IF {PAGINATION} -->
+			{PAGINATION}
+			<!-- ENDIF -->
+		
+		</div> 
+
+	</div>
+
+</div> 
+<!-- END: MAIN -->

@@ -1,0 +1,34 @@
+<!-- BEGIN: MAIN -->
+		<section class="row">
+		
+			<div class="span8">
+			
+				<!-- BEGIN: NEWS -->
+				<!-- BEGIN: ROW -->				
+				<h3><a href="page.php?id={NEWS_ID}">{NEWS_TITLE}</a></h3>
+				<h5>{NEWS_DATE} {PHP.lang.postby} {NEWS_OWNER}</h5>
+				
+				<p>{NEWS_TEXT}</p>
+				<!-- END: ROW -->
+				
+				<br />
+
+				{PAGINATION}
+				<!-- END: NEWS -->
+				
+			</div>
+			
+			<div class="span4 fill right right-fill">
+			
+				<!-- IF {PHP.plugin.latest_pages} -->
+				{PHP.plugin.latest_pages}
+				<!-- ENDIF -->
+				
+				<!-- IF {PHP.plugin.polls_display} -->
+				{PHP.plugin.polls_display}
+				<!-- ENDIF -->
+
+			</div>
+			
+		</section>
+<!-- END: MAIN -->

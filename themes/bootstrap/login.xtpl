@@ -1,0 +1,57 @@
+<!-- BEGIN: MAIN -->
+<div class="interiorContainer clearfix">
+
+	<div class="interiorContent">
+
+		<div id="content" class="col965 gutter generic">
+
+			<h2>{PHP.lang.login}</h2>
+			<p>{PHP.lang.troublemessage}</p>
+			
+			<form action="{FORM_ACTION}" id="registerform" method="post">
+				<fieldset class="hform">
+					<br />
+					<br />
+							
+					<!-- BEGIN: MESSAGE -->
+					<div class="message">
+						<ul>
+							<!-- BEGIN: ROW -->
+							<li>{ROW_MSG}</li>
+							<!-- END: ROW -->
+						</ul>
+					</div>
+					<!-- END: MESSAGE -->
+					
+					<!-- BEGIN: MAINTENANCE -->
+					<div class="span14">
+						<div class="alert-message block-message info fade in" data-alert="alert" >
+							<h5>{PHP.lang.maint}</h5>
+							<p class="padding10"><strong>{PHP.lang.reason}:</strong> {PHP.config.reason}</p>
+							<p><em>{PHP.lang.maintdesc}</em></p>
+						</div>
+					</div>
+					<!-- END: MAINTENANCE -->
+					
+					<div class="text">
+						<label for="username">Username</label>
+						{FORM_USERNAME}
+					</div>
+
+					<div class="text">
+						<label for="password">Password</label>
+						{FORM_PASSWORD}
+					</div>
+				</fieldset>
+
+				<div class="buttons">
+					<button class="btn-submit" type="submit" name="submit"><span>Join</span></button>
+				</div>
+			</form>
+		
+		</div> 
+
+	</div>
+	
+</div> 
+<!-- END: MAIN -->

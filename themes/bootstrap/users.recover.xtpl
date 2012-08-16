@@ -1,0 +1,56 @@
+<!-- BEGIN: MAIN -->
+<div class="interiorContainer clearfix">
+
+	<div class="interiorContent">
+
+		<div id="content" class="col965 gutter generic">
+
+			<h2>Recovery tools</h2>
+			<p>Have you forgotten your password? Simply fill out the field below, answer your accounts security question, and a new password will be sent to your email address.</p>
+
+			<!-- BEGIN: MESSAGE -->
+			<div class="message">
+				<ul>
+					<!-- BEGIN: ROW -->
+					<li>{ROW_MSG}</li>
+					<!-- END: ROW -->
+				</ul>
+			</div>
+			<!-- END: MESSAGE -->
+			
+			<!-- BEGIN: RECOVERY_OPTIONS -->
+			<form action="users.php?action=recover&amp;m=lostpass" id="registerform" method="post">
+				<fieldset class="hform">
+					<h3 class="legend">Recover a lost password</h3>
+					<div class="text">
+						<label for="username">Email Address</label>
+						<input class="xlarge" id="email" name="email" size="30" type="text" />
+					</div>
+				</fieldset>
+				<div class="buttons">
+					<button class="btn-submit" type="submit" name="submit"><span>Join</span></button>
+				</div>
+			</form>
+			<!-- END: RECOVERY_OPTIONS -->
+			
+			<!-- BEGIN: SECURITY_QUESTION -->
+			<form action="users.php?action=recover&amp;m=lostpass&amp;step=2" id="registerform" method="post">
+				<fieldset class="hform">
+					<h3 class="legend">Answer your accounts security question</h3>
+					<div class="text">
+						<label for="username">{SECURITY_QUESTION}</label>
+						<input class="xlarge" id="answer" name="answer" size="30" type="text" />
+						<input id="email" name="email" size="30" type="hidden" value="{EMAIL}" />
+					</div>
+				</fieldset>
+				<div class="buttons">
+					<button class="btn-submit" type="submit" name="submit"><span>Join</span></button>
+				</div>
+			</form>
+			<!-- END: SECURITY_QUESTION -->
+		</div> 
+
+	</div>
+	
+</div> 
+<!-- END: MAIN -->

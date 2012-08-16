@@ -1,0 +1,79 @@
+<!-- BEGIN: MAIN -->
+<div class="interiorContainer clearfix">
+
+	<div class="interiorContent">
+
+		<div id="content" class="col965 generic">
+
+			<h2>{PHP.lang.submitpage}</h2>
+
+			<p>By submitting new content you are contributing to this website proudly. For any community, it is important to be filled
+			with creative ideas and knowledge.</p>
+			
+			<!-- BEGIN: MESSAGE -->
+			<div class="message">
+				<ul>
+					<!-- BEGIN: ROW -->
+					<li>{ROW_MSG}</li>
+					<!-- END: ROW -->
+				</ul>
+			</div>
+			<!-- END: MESSAGE -->
+			
+			<form id="publishForm" method="post" action="page.php?m=add&c={PHP.c}&action=send">
+				<fieldset class="hform">
+					<div id="file" class="text">
+						<label for="title">Title <span class="req">*</span></label>
+						{FORM_TITLE}
+					</div>
+					<div id="file" class="text">
+						<label for="desc">Description:</label>
+						{FORM_DESC}
+					</div>
+					<div id="file" class="text">
+						<label for="cat">Category <span class="req">*</span></label>
+						{FORM_CAT}
+					</div>
+				</fieldset>
+				<fieldset class="hform">
+					<div id="file" class="select">
+						<label for="file">Page file?
+						<span class="formnote">Use the following settings to add a file to this page. By selecting the option <strong>members only</strong>, only registered members will be able to download this file.</span>
+						</label>
+						{FORM_PAGEFILE}
+					</div>
+					<div id="url" class="text">
+						<label for="url">File URL
+						<span class="formnote">If page file is selected, this field is required. Please ensure that the path to the file is valid and working.</span>
+						</label>
+						{FORM_PAGEURL}
+					</div>
+				</fieldset>
+				<!-- IF {PHP.plugins.search.installed} -->
+				<fieldset class="hform" id="member-password">
+					<div class="text">
+						<label for="password_confirm"><span class="cart-info">Price</span>
+						<span class="formnote">If the page is being used as an item for sale, please specify a price of the item.</span>
+						</label>
+						{FORM_CART_PRICE}
+					</div>
+				</fieldset>
+				<!-- ENDIF -->
+				<fieldset class="hform">
+					<div class="textarea">
+						{FORM_TEXT}
+					</div>
+				</fieldset>
+				<fieldset class="hform">
+					<div class="buttons">
+						<button class="btn-submit" type="submit" name="submit"><span>Submit</span></button>
+					</div>
+				</fieldset>
+			</form>
+		
+		</div> 
+
+	</div>
+
+</div> 
+<!-- END: MAIN -->

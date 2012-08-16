@@ -1,0 +1,143 @@
+<!-- BEGIN: MAIN -->
+<div class="interiorContainer clearfix">
+
+	<div class="interiorContent">
+
+		<div class="categoryBar">
+			<h4 class="category"><a href="forums.php">Forums</a></h4>
+		</div>
+
+		<div id="content" class="col965 forumpage">
+
+			<div id="addon-supported">Developer <br />Support</div>
+
+			<h2>{TOPIC_TITLE}</h2>
+
+			<p><a class="prev-topic" href="forums.php?m=topics&section={PHP.section}">Back to {SECTION_TITLE}</a></p>
+			
+			<br />
+			
+			<div id="forum-wrap">
+			
+				<br />
+				
+				<table class="post-functions" cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td class="pagination-outer">
+							<!-- BEGIN: ADMIN -->
+							<strong style="font-size:16px">Moderator actions:</strong>
+							{STICKY}
+							{LOCK}
+							{DELETE}
+							<!-- END: ADMIN -->
+						</td>
+						<td class="post-functions-links">
+							<!-- IF {PHP.user.auth_write} -->
+							<a class="dButton" id="pr2" href="#reply">Post Reply</a>
+							<!-- ENDIF -->
+						</td>
+					</tr>
+				</table>
+				<br />
+				
+				<h2><span>{TOPIC_TITLE}</span></h2>
+				
+				<table cellpadding="0" cellspacing="0" border="0" style="width:100%">
+					<!-- BEGIN: POST -->
+					<tr>
+						<td colspan="3">
+							<table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+								<tr>
+									<th class="cell-user-head">{AUTHOR}</th>
+									<th colspan="2">
+										<table cellpadding="0" cellspacing="0" border="0" style="width:99%;">
+											<tr>
+												<td class="post-date">Posted: {DATE}</td>
+												<td class="post-basics">
+													<span class="linkset">
+														{ADMIN}
+														<a name="post-{ID}" href="forums.php?m=post&section={PHP.section}&id={PHP.id}#post-{ID}" title="Permalink to this post"># {ID}</a>
+													</span>
+												</td>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr>
+									<td class="cell-user developer-cell">
+										<div class="addon-dev">{GROUP}</div>
+										<div class="rankMember">{AVATAR}</div>
+										<br />
+										Total Posts:&nbsp; {POSTCOUNT}
+									</td>
+									<td class="cell-post" colspan="2">
+										{TEXT}
+										<!-- BEGIN: UPDATED -->
+										<div class="updated">updated on {DATE} by {AUTHOR}</div>
+										<!-- END: UPDATED -->
+									</td>
+								</tr>
+								<tr>
+									<td class="editorial-functions" colspan="2">
+										<div class="edit-links">
+											<!-- IF {PHP.user.auth_write} --><a class="dButton-sm" href="forums.php?m=post&section={PHP.section}&id={PHP.id}&quote={ID}#reply">Quote</a><!-- ENDIF -->&nbsp;
+										</div>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<!-- END: POST -->
+				</table>
+				
+				<!-- IF {PAGINATION} -->
+				{PAGINATION}
+				<!-- ENDIF -->
+				
+				<div class="topic-nav">
+					<a class="prev-topic" href="">Back to {SECTION_TITLE}</a>
+				</div>
+				
+				<br />
+				
+				<!-- BEGIN: MESSAGE -->
+				<div class="message">
+					<ul>
+						<!-- BEGIN: ROW -->
+						<li>{ROW_MSG}</li>
+						<!-- END: ROW -->
+					</ul>
+				</div>
+				<!-- END: MESSAGE -->
+				
+				<!-- BEGIN: REPLY -->
+				<a name="reply"></a>
+				<div id="fastreply" style="padding: 0; display: block;">
+					<form id="reply" name="reply" method="post" action="{FORM_ACTION}">
+						<h2><span>Reply to this topic</span></h2>
+						<table class="basic submissionForm" cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+							<tr>
+								<th>
+									{FORM_TEXT}
+								</th>
+							</tr>
+							<tr>
+								<td class="cellTwo buttonRow">
+									<div class="submission-buttons">
+										<button type="submit" name="submit"><span>Submit Post</span></button>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>	
+				<!-- END: REPLY -->
+				
+			</div> 
+
+		</div> 
+
+	</div>
+	
+</div> 
+<!-- END: MAIN -->

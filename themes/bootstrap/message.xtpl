@@ -1,0 +1,16 @@
+<!-- BEGIN: MAIN -->
+<div class="interiorContainer clearfix">
+
+	<div class="interiorContent">
+
+		<div id="content" class="col965 gutter generic">
+
+			<h2>{MESSAGE_SUBTITLE}</h2>
+			<p>{MESSAGE_TEXT}</p>
+
+		</div> 
+
+	</div>
+	
+</div> 
+<!-- END: MAIN -->

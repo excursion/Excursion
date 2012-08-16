@@ -1,0 +1,58 @@
+<!-- BEGIN: MAIN -->
+<div class="interiorContainer clearfix">
+    
+	<div class="interiorContent">
+
+		<div id="content" class="col965 gutter generic">
+
+			<h2>{PHP.lang.contact_title}</h2>
+			
+			<h3>{PHP.lang.contact_subtitle}</h3>
+			
+			<br />
+			
+			<p>{PHP.lang.contact_text}</p>
+						
+			<!-- BEGIN: MESSAGE -->
+			<div class="message">
+				<ul>
+					<!-- BEGIN: ROW -->
+					<li>{ROW_MSG}</li>
+					<!-- END: ROW -->
+				</ul>
+			</div>
+			<!-- END: MESSAGE -->
+			
+			<form action="{FORM_ACTION}" method="post" id="member_form">
+				<fieldset class="hform border-top" id="optional-fields">
+					<div class="text">
+						<label for="name">{PHP.lang.contact_name}</label>
+						{FORM_NAME}
+					</div>
+
+					<div class="text">
+						<label for="email">{PHP.lang.contact_email}</label>
+						{FORM_EMAIL}
+					</div>
+					
+					<div class="text">
+						<label for="email">{PHP.lang.contact_subject}</label>
+						{FORM_SUBJECT}
+					</div>
+
+					<div class="textarea text">
+						<label for="text">{PHP.lang.contact_textarea}</label>
+						{FORM_TEXT}
+					</div>
+				</fieldset>
+				<div class="buttons">
+					<button class="btn-submit" type="submit" name="submit"><span>Submit</span></button>
+				</div>
+			</form>
+
+		</div> 
+
+	</div>
+	
+</div>
+<!-- END: MAIN -->

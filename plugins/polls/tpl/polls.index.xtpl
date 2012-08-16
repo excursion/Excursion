@@ -1,0 +1,33 @@
+<!-- BEGIN: MAIN -->
+<div class="sideItem">
+
+	<h3>{POLL_TITLE}</h3>
+
+	<!-- BEGIN: NOT_VOTED -->
+	<form id="polls" action="plugin.php?r=polls&amp;id={POLL_ID}" method="post">
+		<ul class="unstyled">
+			<!-- BEGIN: OPTIONS -->
+			<li><input type="radio" name="vote_option" value="{ID}" />&nbsp; {TITLE}</li>
+			<!-- END: OPTIONS -->
+			<li class="center">
+				<div class="buttons"><button class="btn-submit" type="submit" name="submit"><span>Submit</span></button></div>
+			</li>
+		</ul>
+	</form>
+	<!-- END: NOT_VOTED -->
+
+	<div id="poll-results" {POLL_DISPLAY}>
+
+		<!-- BEGIN: RESULTS -->
+		<p>{RESULT_TITLE} ({RESULT_PERCENT}%)</p>
+		<div class="progress"><div class="bar" style="width: {RESULT_PERCENT}%;"></div></div>
+		<!-- END: RESULTS -->
+		
+		<!-- IF {PHP.user.id} == 0 -->
+		<p>You must be <a href="login.php">logged in</a> to submit your vote!</p>
+		<!-- ENDIF -->
+			
+	</div>
+	
+</div>
+<!-- END: MAIN -->

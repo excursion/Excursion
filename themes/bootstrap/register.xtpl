@@ -1,0 +1,70 @@
+<!-- BEGIN: MAIN -->
+<div class="interiorContainer clearfix">
+
+	<div class="interiorContent">
+
+		<div id="content" class="col965 gutter generic">
+
+			<h2>Registration</h2>
+			<p>Creating an account will give you the most out of this website. Unlocking features such as commenting, rating and downloading specific files.</p>
+
+			<!-- BEGIN: MESSAGE -->
+			<div class="message">
+				<ul>
+					<!-- BEGIN: ROW -->
+					<li>{ROW_MSG}</li>
+					<!-- END: ROW -->
+				</ul>
+			</div>
+			<!-- END: MESSAGE -->
+			
+			<form action="{FORM_ACTION}" id="registerform" method="post">
+				<fieldset class="hform">
+					<h3 class="legend">Account Information</h3>
+
+					<div class="text">
+						<label for="username">Username <span class="req">*</span></label>
+						{FORM_USERNAME}
+					</div>
+					
+					<div class="text">
+						<label for="email">Email <span class="req">*</span><span class="formnote">Not sold or shared.</span></label>
+						{FORM_EMAIL}
+					</div>
+
+					<div class="text">
+						<label for="password">Password <span class="req">*</span></label>
+						{FORM_PASSWORD}
+					</div>
+
+					<div class="text">
+						<label for="password_confirm">Confirm Password <span class="req">*</span><span class="formnote">Password fields must match.</span></label>
+						{FORM_REPEAT_PASSWORD}
+					</div>
+				</fieldset>
+				
+				<fieldset class="hform" id="optional-fields">
+					<h3 class="legend">Security Information</h3>
+
+					<div class="select">
+						<label for="question">{PHP.lang.secq} <span class="req">*</span></label>
+						{QUESTIONS}
+					</div>
+
+					<div class="text">
+						<label for="answer">{PHP.lang.seca} <span class="req">*</span></label>
+						{FORM_SQ_ANSWER}
+					</div>
+				</fieldset>
+
+				<div class="buttons">
+					<button class="btn-submit" type="submit" name="submit"><span>Join</span></button>
+				</div>
+			</form>
+		
+		</div> 
+
+	</div>
+	
+</div> 
+<!-- END: MAIN -->

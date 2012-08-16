@@ -1,0 +1,27 @@
+* * * * * * * * * * * * * * * * * * * * * * * * * * *
+* Excursion Content Management System               *
+*                                                   *
+* @Authors Dyllon Mahan, Brock Burkholder           *
+* @Copyright Copyright (c) Excursion Team 2011-2012 *
+* * * * * * * * * * * * * * * * * * * * * * * * * * *
+ 
+1. Installation		2. Configuration		3. Credits
+-------------------------------------------------------------------
+Installing Excursion is easier than ever! By following these few 
+steps; your Excursion website will be up and running in no time.
+
+	1.	Upload the package to your web server
+	
+	2.	Create a MySQL database (or use a currently existing 
+		database)
+		
+	3.	Visit your website URL, and you will be automatically
+		redirected to the install script.
+-------------------------------------------------------------------
+All configuration is done through the administration panel.
+-------------------------------------------------------------------
+Xtemplate 	- 	http://www.phpxtemplate.org/
+Bootstrap 	- 	http://twitter.github.com/bootstrap/
+CKEditor 	- 	http://ckeditor.com/
+JQuery		-	http://jquery.com/
+Gylphicon	-	http://glyphicons.com/

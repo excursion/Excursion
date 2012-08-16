@@ -1,0 +1,15 @@
+<!-- BEGIN: MAIN -->
+<div class="sideItem newestList">
+					
+	<h3>Tutorials &amp; Downloads</h3>
+	<ul>
+<!-- BEGIN: PAGE_ROW -->
+		<li><a href="page.php?id={ID}"><span>{CAT}</span>{TITLE}</a></li>
+<!-- END: PAGE_ROW -->
+<!-- BEGIN: NO_PAGES_FOUND -->
+		<li>{PHP.lang.latest_empty}</li>
+<!-- END: NO_PAGES_FOUND -->
+	</ul>
+
+</div>
+<!-- END: MAIN -->

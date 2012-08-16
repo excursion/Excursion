@@ -1,0 +1,61 @@
+<!-- BEGIN: MAIN -->
+<div class="interiorContainer clearfix">
+
+	<div class="interiorContent">
+
+		<div class="categoryBar">
+			<h4 class="category"><a href="forums.php">Forums</a></h4>
+		</div>
+
+		<div id="content" class="col965 forumpage">
+
+			<div id="addon-supported">Developer <br />Support</div>
+
+			<h2>Create a new topic</h2>
+
+			<p><a class="prev-topic" href="forums.php?m=topics&section={PHP.section}">Back to {SECTION_TITLE}</a></p>
+			
+			<br />
+			
+			<div id="forum-wrap">
+			
+				<!-- BEGIN: MESSAGE -->
+				<div class="message">
+					<ul>
+						<!-- BEGIN: ROW -->
+						<li>{ROW_MSG}</li>
+						<!-- END: ROW -->
+					</ul>
+				</div>
+				<!-- END: MESSAGE -->
+				
+				<a name="reply"></a>
+				<div id="fastreply" style="padding: 0; display: block;">
+					<form id="submit_post" name="submit_post" method="post" action="{FORM_ACTION}">
+						<h2><span>Create a new topic</span></h2>
+						<table class="basic submissionForm" cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+							<tr>
+								<th><label>Title</label> &nbsp;&nbsp; {FORM_TITLE}</th>
+							</tr>
+							<tr>
+								<th>{FORM_TEXT}</th>
+							</tr>
+							<tr>
+								<td class="cellTwo buttonRow">
+									<div class="submission-buttons">
+										<button type="submit" name="submit"><span>Create Topic</span></button>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>	
+				
+			</div> 
+
+		</div> 
+
+	</div>
+	
+</div> 
+<!-- END: MAIN -->

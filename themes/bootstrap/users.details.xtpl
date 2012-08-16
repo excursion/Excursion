@@ -1,0 +1,86 @@
+<!-- BEGIN: MAIN -->
+<div class="interiorContainer clearfix">
+    
+	<div class="interiorContent">
+
+		<div id="content" class="grid_7">
+
+			<h2>{USERNAME}'s Profile</h2>
+			<!-- IF {PHP.user.group} == '4' --><a href="users.php?m=edit&amp;id={ID}">{PHP.lang.edituser}</a><!-- ENDIF -->
+
+			<br />
+			<br />
+			
+			<div class="col125 avatar gutter">
+				<!-- IF {GRAVATAR} -->
+				{GRAVATAR}
+				<!-- ELSE -->
+				{AVATAR}
+				<!-- ENDIF -->
+			</div>
+
+			<div class="col405">
+			
+				<br />
+				<br />
+
+				<dl class="profileStats">
+					<dt>Group:</dt>
+					<dd>{GROUP}</dd>
+					
+					<dt>Registered:</dt>
+					<dd>{REGDATE}</dd>
+
+					<dt>Birthday:</dt>
+					<dd>{BIRTHDATE}</dd>
+
+					<dt>Gender:</dt>
+					<dd>{GENDER}</dd>
+				</dl>
+
+			</div>
+
+			<div id="memberInfo">
+
+				<h4>Contact Information</h4>
+		
+				<dl class="profileStats">
+					<dd><a href="mailto:{EMAIL}">{EMAIL}</a></dd>
+				</dl>
+				
+			</div> 
+			
+			<!-- IF {PHP.plugins.useractivity.installed} -->								
+			<div id="profile-favs" class="profileArea col965">
+			
+				<div class="col125 activitySummary">
+			
+					<h3 class="commentTitle">Comments</h3>
+					
+				</div>
+
+				<table class="activity">
+					<thead>
+						<tr>
+							<th colspan="2" class="doubleCol">Page</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- BEGIN: ACTIVITY_ROW -->
+						<tr class="public">
+							<td class="doubleCol"><a href="page.php?id={PAGE_ID}">{TITLE}</a></td>
+							<td><a href="page.php?id={PAGE_ID}#com-{ID}">view comment &rarr;</a></td>
+						</tr>
+						<!-- END: ACTIVITY_ROW -->
+					</tbody>
+				</table>
+				
+			</div> 
+			<!-- ENDIF -->
+			
+		</div>
+
+	</div> 
+	
+</div>
+<!-- END: MAIN -->

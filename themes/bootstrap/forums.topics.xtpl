@@ -1,0 +1,94 @@
+<!-- BEGIN: MAIN -->
+<div class="interiorContainer clearfix">
+
+	<div class="interiorContent">
+
+		<div class="categoryBar">
+			<h4 class="category"><a href="forums.php">Forums</a></h4>
+		</div>
+
+		<div id="content" class="col965 forumpage">
+
+			<div id="addon-supported">Developer <br />Support</div>
+
+			<h2>{SECTION_CATEGORY}</h2>
+
+			<p>{SECTION_DESC}</p>
+			
+			<div id="forum-wrap">
+				
+				<br />
+				<table class="post-functions" cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td class="pagination-outer">&nbsp;</td>
+						<td class="post-functions-links">
+							<!-- IF {PHP.user.auth_write} -->
+							<a class="dButton" href="forums.php?m=newtopic&section={PHP.section}">New Topic</a>
+							<!-- ENDIF -->
+						</td>
+					</tr>
+				</table>
+				<br />
+
+				<h2><span>{SECTION_CATEGORY}</span></h2>
+				<table class="basic" cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+					<tr>
+						<th class="topic" colspan="2" style="width:68%;">Title</th>
+						<th style="width:20%;">Latest Post</th>
+						<th align="center" style="width:6%;">Replies</th>
+						<th align="center" style="width:6%;">Views</th>
+					</tr>
+					<!-- BEGIN: ROW -->
+					<tr>
+						<td class="cell-marker">
+							{ICON}
+						</td>
+						<td style="width:528px;vertical-align:middle">
+							<div class="topicTitle">
+								<a href="forums.php?m=post&section={SECTION_CODE}&id={ID}">{TITLE}</a>
+							</div>
+						</td>
+						<td class="cell-info" style="width:225px;">
+							<!-- BEGIN: LAST_POST -->
+							<a href="http://localhost/forums.php?m=post&section={SECTION}&id={TOPIC_ID}#post-{POST_ID}"><img src="{PHP.theme.dir}/img/icon_follow.png" height="10"></a> {TIMEAGO}
+							<br />by {AUTHOR}
+							<!-- END: LAST_POST -->
+						</td>
+						<td class="cell-numeric" style="width:70px;" align="center">{POST_COUNT}</td>
+						<td class="cell-numeric" style="width:70px;" align="center">{VIEW_COUNT}</td>
+					</tr>
+					<!-- END: ROW -->
+					<!-- BEGIN: EMPTY -->
+					<tr>
+						<td colspan="4" class="centerall">This section is empty</td>
+					</tr>
+					<!-- END: EMPTY -->
+					<tr>
+						<td class="tableRowHeadingBold" colspan="5">
+							&nbsp;
+						</td>
+					</tr>
+				</table>
+				
+				<!-- IF {PAGINATION} -->
+				{PAGINATION}
+				<!-- ENDIF -->
+						
+				<table class="fico">
+					<tr>
+						<td><img src="assets/images/forums/marker_sticky_topic.gif"> Sticky</td>
+						<td><img src="assets/images/forums/marker_hot_topic.gif"> Popular topic</td>
+						<td><img src="assets/images/forums/marker_new_topic.gif"> New topic</td>
+						<td><img src="assets/images/forums/marker_old_topic.gif"> Old topic</td>
+						<td><img src="assets/images/forums/marker_closed_topic.gif"> Locked</td>
+					</tr>
+				</table>
+				
+			</div> 
+
+		</div> 
+
+	</div>
+	
+</div> 
+<!-- END: MAIN -->

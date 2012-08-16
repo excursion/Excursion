@@ -1,0 +1,188 @@
+<!-- BEGIN: MAIN -->
+<div class="interiorContainer clearfix">
+
+	<div class="interiorContent">
+
+		<div class="categoryBar">
+		
+			<h4 class="category"><a href="list.php?c={CAT_CODE}">{CAT}</a></h4>
+		
+		</div>
+
+		<div id="content" class="col685 gutter article">
+		
+			<!-- BEGIN: MESSAGE -->
+			<div class="message">
+				<ul>
+					<!-- BEGIN: ROW -->
+					<li>{ROW_MSG}</li>
+					<!-- END: ROW -->
+				</ul>
+			</div>
+			<!-- END: MESSAGE -->
+
+			<h2>{TITLE}</h2>
+
+			<p class="date"><strong>{DATE}</strong><br />
+			by {OWNER}<br /></p>
+
+			<!-- IF {DESC} -->
+			<div id="articleSummary">	
+			
+				<p>{DESC}</p>
+				
+			</div>
+			<!-- ENDIF -->
+
+			{TEXT}
+
+		</div> 
+
+		<div id="sidebar" class="col265">
+		
+			<!-- IF {PHP.plugins.ratings.installed} -->
+			<div class="infoBlock">					
+				{RATINGS}
+				<!-- IF {PHP.user.id} == 0 -->
+				<br />
+				<p>You must be <a href="login.php">logged-in</a> to rate pages.</p>
+				<!-- ENDIF -->
+			</div>
+			<!-- ENDIF -->
+			
+			<!-- IF {PHP.plugins.search.installed} && {CART_PRICE} > 0 -->
+			<!-- IF {PHP.user.id} > 0 -->
+			<div class="sideItem notop">
+				<div id="purchase-cta">
+				
+					<h3>Buy It Now!</h3>
+				
+					<form id="cart" method="post" action="plugin.php?r=cart&amp;action=add&amp;id={ID}">
+						<div class="price"><span>$</span>{CART_PRICE}</div>
+						<div class="lowrow">
+							<div class="quantity"><span>Quantity:</span> <input type="text" id="addon-qty" name="quantity" value="1" size="2" /></div>
+							<input type="submit" class="btn-standard" name="Add to Cart" value="Add to Cart" />
+						</div>
+					</form>
+				</div> 
+			</div>
+			<!-- ENDIF -->
+			<!-- ENDIF -->
+			
+			<!-- BEGIN: PAGE_FILE -->
+			<div class="sideItem notop">
+			
+				<a class="btn-standard sidebar-download" href="{FILE_URL}">Download</a>
+				
+			</div>
+			<!-- END: PAGE_FILE -->
+			
+			<!-- BEGIN: NAV -->
+			<div class="sideItem addonList">
+				
+				<h3>Overview</h3>
+				
+				<ul>
+					{NAV_TABTITLES}
+				</ul>
+								
+			</div>
+			<!-- END: NAV -->
+			
+			<!-- IF {PHP.user.group} == 4 -->
+			<div class="sideItem addonList">
+
+				<h3>{PHP.lang.administration}</h3>
+				<ul>
+					<li><a href="page.php?id={ID}&amp;c={CAT_CODE}&amp;action=queue">{PHP.lang.pvq}</a></li>
+					<li><a href="page.php?id={ID}&amp;c={CAT_CODE}&amp;m=edit">{PHP.lang.editpage}</a></li>
+					<li><a href="page.php?id={ID}&amp;c={CAT_CODE}&amp;action=remove" onclick="return confirm_delete()">{PHP.lang.removepage}</a></li>
+				</ul>
+				
+			</div>
+			<!-- ENDIF -->
+			
+		</div> 
+
+		<!-- BEGIN: COMMENTS -->
+		<a name="comments"></a>
+		<div id="commentAreaWrap">
+
+			<h3 id="comments">{COM_COUNT} <!-- IF {COM_COUNT} == 1 -->Comment:<!-- ELSE -->Comments:<!-- ENDIF --></h3>
+
+			<div id="commentsBlock" class="gutter">
+			
+				<!-- IF {COM_COUNT} == 0 --><h4>This page has no comments</h4>
+				<p>What are you waiting for? Share your thoughts now!</p><!-- ENDIF -->
+
+				<!-- BEGIN: ROW -->
+				<a name="com-{COM_ID}"></a>
+				<div class="commentPost">
+				
+					<h4><strong>{COM_OWNER}</strong> <span class="reviewDate">{COM_DATE}</span>{COM_ADMIN}</h4>
+
+					<div class="devotedSm">
+					
+						<!-- IF {PHP.plugins.gravatar.installed} -->
+						{COM_GRAVATAR}
+						<!-- ELSE -->
+						{COM_AVATAR}
+						<!-- ENDIF -->
+						
+					</div>
+
+					<div class="commentBubbleOuter">
+	
+						<div class="commentBubbleInner clearfix">
+
+							<div id="comment_box_784">
+							
+								<p>{COM_TEXT}</p>
+
+							</div>
+
+						</div> 
+			
+					</div> 
+
+				</div>
+				<!-- END: ROW -->
+				
+				<!-- IF {PAGINATION} -->
+				{PAGINATION}
+				<!-- ENDIF -->
+
+			</div> 
+
+			<!-- IF {PHP.user.id} == 0 -->
+			<p class="must_reg">You must be a registered member to comment. If you're already a member, 
+			<a href="login.php">log in</a> now, and if not go <a href="register.php">register</a>.</p>
+			<!-- ELSE -->
+			<!-- BEGIN: REPLY -->
+			<div id="leaveCommentBlock" class="col265">
+
+				<h4>Leave a Comment</h4>
+
+				<form id="comment_form" method="post" action="{FORM_ACTION}">
+					<fieldset>
+						<p class="formNote">Criticism is welcome, but keep it civil and offer something constructive while you're at it.</p>
+
+						<div class="textareaWrap">
+							<textarea name="text" class="commentbox" cols="10" rows="30"></textarea>
+						</div>
+
+						<button type="submit" id="submitButton">Submit</button>
+					</fieldset>  
+				</form>
+
+			</div> 
+			<!-- END: REPLY -->
+			<!-- ENDIF -->
+
+		</div> 
+		<!-- END: COMMENTS -->
+
+	</div>
+	
+</div>
+<!-- END: MAIN -->

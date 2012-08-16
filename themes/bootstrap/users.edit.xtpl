@@ -1,0 +1,79 @@
+<!-- BEGIN: MAIN -->
+<div class="interiorContainer clearfix">
+
+	<div class="interiorContent">
+
+		<div id="content" class="col965 generic">
+
+			<h2>{PHP.lang.editut}</h2>
+			
+			<br />
+			
+			<!-- BEGIN: MESSAGE -->
+			<div class="message">
+				<ul>
+					<!-- BEGIN: ROW -->
+					<li>{ROW_MSG}</li>
+					<!-- END: ROW -->
+				</ul>
+			</div>
+			<!-- END: MESSAGE -->
+					
+			<form id="member_form" action="{FORM_ACTION}" method="post">
+				<fieldset class="hform">
+					<div class="select">
+						<label for="username">Username</label>
+						{FORM_USERNAME}
+					</div>
+					
+					<div class="select">
+						<label for="email">Email</label>
+						{FORM_EMAIL}
+					</div>
+					
+					<div class="select">
+						<label for="birthday">Birthday</label>
+						{FORM_BIRTHDATE}
+					</div>
+
+					<div class="select">
+						<label for="gender">Gender</label>
+						{FORM_GENDER}
+					</div>
+					<!-- IF {PHP.plugins.gravatar.installed} -->
+					<div class="text">
+						<label for="gravatar">Gravatar Account
+						<span class="formnote"><a href="">Gravatar</a> is a global avatar system that allows members to represent themselves across multiple websites using the same avatar. To use your own, enter your gravatar account.</span>
+						</label>
+						{FORM_GRAVATAR}
+					</div>
+					<!-- ENDIF -->
+				</fieldset>
+				
+				<fieldset class="hform" id="member-password">
+
+					<h3 class="legend">Password <span class="formnote">If you want a new password, enter the new password and confirm it, and then enter your current password.</span></h3>
+
+					<div class="text">
+						<label for="password">New Password <span class="req">*</span><span class="formnote">Enter your new password here.</span></label>
+						{FORM_NEWPASSWORD}
+					</div>
+
+					<div class="text">
+						<label for="password_confirm">Confirm New Password <span class="req">*</span><span class="formnote">Confirm your new password.</span></label>
+						{FORM_REPEAT_NEWPASSWORD}
+					</div>
+				</fieldset>
+				
+				<div class="buttons">
+					<button class="btn-submit" type="submit" name="submit"><span>Submit</span></button>
+				</div>
+			
+			</form>
+
+		</div> 
+
+	</div>
+
+</div>
+<!-- END: MAIN -->

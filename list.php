@@ -1,0 +1,105 @@
+<?php
+/**
+ * Excursion - Content Management System
+ * 
+ * @version 0.0.1
+ * @author Dyllon Mahan, Brock Burkholder
+ */
+
+$ex['location'] = 'list'; 
+require_once 'config.php';
+require_once 'core/classes.php';
+require_once 'core/xtemplate.php';
+require_once 'core/common.php';
+
+list($user['auth_read'], $user['auth_write'], $user['auth_admin']) = $excursion->checkAuth('page', $c);
+$excursion->blockAuth($user['auth_read']);
+
+$page = (!empty($page) ? $page : '1');
+$total_pages = $db->query("SELECT COUNT(*) FROM pages WHERE cat = '$c' AND state > 0")->fetchColumn();
+$pagination->setLink("list.php?c=$c&page=%s");
+$pagination->setPage($page);
+$pagination->setSize($config['maxpages']);
+$pagination->setTotalRecords($total_pages);
+
+require_once 'core/header.php';
+
+$xtpl = new XTemplate($excursion->generateTPL(array('list', $c)));
+
+if(!empty($c))
+{
+	/* === Hook === */
+	foreach ($excursion->Hook('list.first') as $pl)
+	{
+		include $pl;
+	}
+	/* ===== */
+	
+	$sql = $db->query("SELECT * FROM pages WHERE cat = '$c' AND state > 0 ORDER BY date DESC " . $pagination->getLimitSql());
+	while ($row = $sql->fetch())
+	{
+		/* === Hook === */
+		foreach ($excursion->Hook('list.loop.tags') as $pl)
+		{
+			include $pl;
+		}
+		/* ===== */
+		
+		$DateTime = new DateTime(date($config['date_medium'], $row['date']));
+
+		$xtpl->assign(array(
+			'ID' => (int) $row['id'],
+			'TITLE' => $row['title'],
+			'DESC' => $row['desc'],
+			'CAT' => $db->query("SELECT title FROM categories WHERE code='".$row['cat']."' LIMIT 1")->fetchColumn(),
+			'CAT_CODE' => $row['cat'],
+			'OWNER' => $excursion->generateUser($row['owner']),
+			'DATE' => date($config['date_medium'], $row['date']),
+			'NEWS_DATE_MONTH' => $DateTime->format( 'F' ),
+			'DATE_MONTH_SHORT' => str_replace($numberMonth, $shortMonth, $DateTime->format( 'm' )),
+			'DATE_DAY' => $DateTime->format( 'd' ),
+			'TEXT' => $row['text'],
+			'TEXT_CUT' => $excursion->trim_text($row['text'], 300, true, true)
+		));
+		$xtpl->parse('MAIN.LIST');	
+	}
+	
+	/* === Hook === */
+	foreach ($excursion->Hook('list.last') as $pl)
+	{
+		include $pl;
+	}
+	/* ===== */
+}
+else
+{
+	header("Location: message.php");
+}
+
+$sql_cat = $db->query("SELECT * FROM categories WHERE code = '$c' LIMIT 1");
+$cat = $sql_cat->fetch();
+$navigation = $pagination->create_links();
+
+$xtpl->assign(array(
+	'ID' => (int) $cat['id'],
+	'TITLE' => $cat['title'],
+	'DESC' => $cat['desc'],
+	'CODE' => $cat['code'],
+	'PAGINATION' => $navigation
+));
+
+/* === Hook === */
+foreach ($excursion->Hook('list.tags') as $pl)
+{
+	include $pl;
+}
+/* ===== */
+
+$excursion->display_messages($xtpl);
+
+$xtpl->parse('MAIN');
+$xtpl->out('MAIN');
+
+require_once 'core/footer.php';
+ 
+?>

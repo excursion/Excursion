@@ -1,0 +1,70 @@
+<!-- BEGIN: HEADER -->
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>{HEADER_TITLE}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta property="og:image" content="http://mezzanine.jupo.org/static/img/mezzanine-logo.png">
+	<meta name="viewport" content="width=device-width">
+	<meta name="keywords" content="{PHP.config.keywords}">
+	
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+	
+	<link rel="stylesheet" type="text/css" href="/min/f={PHP.theme.dir}/css/style.css,{PHP.config.header_css}" />
+	<script type="text/javascript" src="http://mezzanine.jupo.org//static/CACHE/js/1d2fc9413cb7.js"></script>
+	<script type="text/javascript">function confirm_delete() {return confirm('{PHP.lang.removeconfirm}');}</script>
+
+</head>
+<body>
+
+	<div class="topbar fill"></div>
+	
+	<div class="container">
+	
+		<header class="row">
+		
+			<div class="span8">
+			
+				<h1>Excursion</h1>
+				<h2>An advanced content management system with modular functionality.</h2>
+				<p>search here</p>
+				
+			</div>
+			
+			<div class="span4 right">
+			
+				<div class="fill login">
+					<!-- BEGIN: GUEST -->
+					<h3>Login to your account</h3>
+					<form action="" method="post">
+						<p><input type="text" placeholder="Username"></p>
+						<p><input type="text" placeholder="Password"></p>
+						<button class="btn" name="submit">Submit</button>
+					</form>
+					<!-- END: GUEST -->
+				
+					<!-- BEGIN: USER -->
+					<span id="memberLinks">
+						<ul class="member-links">
+							<li><span class="memberName">{PHP.lang.welcome} <strong>{PHP.user.name}</strong></span> &nbsp;|</li>
+							<!-- IF {PHP.user.group} == '4' --><li><a href="admin.php">{PHP.lang.admin}</a></li><!-- ENDIF -->
+							<li><a href="users.php?m=profile">{PHP.lang.updateprofile}</a></li>
+							<li><a href="logout.php">{PHP.lang.logout}</a></li>
+							<!-- IF {PHP.plugins.cart.installed} --><li><a href="plugin.php?p=cart" class="cart-info">Your Cart (<span>{PHP.total_shop_items}</span> items)</a></li><!-- ENDIF -->
+						</ul>
+					</span>
+					<!-- END: USER -->
+				</div>
+			
+			</div>
+			
+		</header>
+		
+		<div class="row">
+		
+			<div class="span12 fill hr"></div>
+			
+		</div>
+<!-- END: HEADER -->
